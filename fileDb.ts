@@ -30,7 +30,10 @@ const fileDb = {
         await fs.writeFile(fileLocation, JSON.stringify(messageContent));
         data.push(messageContent);
         return messageContent;
-    }
+    },
+    async getLastFiveMessages() {
+        return data.slice(data.length - 5);
+    },
 };
 
 export default fileDb;
